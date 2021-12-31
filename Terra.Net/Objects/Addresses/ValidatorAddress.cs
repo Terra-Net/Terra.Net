@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Terra.Net.Crypto.Implemetations;
 
 namespace Terra.Net.Objects.Addresses
 {
@@ -48,10 +49,10 @@ namespace Terra.Net.Objects.Addresses
         * Converts a Terra account address to a validator address.
         * @param address account address to convert
         */
-        public static ValidatorAddress FromAccAddress(AccAddress address)
+        public static ValidatorAddress FromAccAddress(AccountAddress address)
         {
             var vals = Bech32.Decode(address.Value);
-            return new ValAddress(Bech32.Encode("terravaloper", vals.words));
+            return new ValidatorAddress(Bech32.Encode("terravaloper", vals.words));
         }
     }
 }

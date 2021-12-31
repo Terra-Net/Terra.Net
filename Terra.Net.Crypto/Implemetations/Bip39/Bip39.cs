@@ -126,7 +126,7 @@ namespace Terra.Net.Crypto.Bip39
                 throw new NotSupportedException(InvalidEntropy);
             }
 
-            var rngCryptoServiceProvider = new RNGCryptoServiceProvider();
+            var rngCryptoServiceProvider =  RandomNumberGenerator.Create();
 
             var buffer = new byte[strength / 8];
             rngCryptoServiceProvider.GetBytes(buffer);

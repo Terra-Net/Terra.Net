@@ -1,4 +1,8 @@
 ﻿#nullable enable
+using Cosmos.Crypto.Secp256K1;
+using Cosmos.Tx.V1Beta1;
+using Google.Protobuf;
+using Google.Protobuf.WellKnownTypes;
 using System;
 using Terra.Net.Crypto;
 using Terra.Net.Crypto.Ecdsa;
@@ -10,6 +14,7 @@ using Terra.Net.Crypto.Implemetations;
 //using Terra.Net.Crypto.Ecdsa;
 using Terra.Net.Crypto.Ripemd160;
 using Terra.Net.Objects.Addresses;
+using static Cosmos.Tx.V1Beta1.ModeInfo;
 
 namespace Terra.Net.Objects
 {
@@ -20,11 +25,11 @@ namespace Terra.Net.Objects
      * `super` with the raw public key from within your subclass. See [[MnemonicKey]] for
      * an implementation of a basic mnemonic-based key.
      */
-   
+
     public abstract class Key
     {
         private const string BECH32_PUBKEY_DATA_PREFIX = "eb5ae98721";
-        
+
         public byte[]? PublicKey { get; set; }
         public byte[]? PrivateKey { get; set; }
 
@@ -55,7 +60,7 @@ namespace Terra.Net.Objects
             Buffer.BlockCopy(publicKey, 0, rv, buffer.Length, publicKey.Length);
             return Bech32.ToWords(rv);
         }
-        
+
         /**
          * You will need to supply `sign`, which produces a signature for an arbitrary bytes payload
          * with the ECDSA curve secp256pk1.
@@ -68,14 +73,15 @@ namespace Terra.Net.Objects
          * Terra account address. `terra-` prefixed.
          */
 
-        public AccountAddress GetAccountAddress {
+        public AccountAddress GetAccountAddress
+        {
             get
             {
                 if (this.RawAddress == null)
                 {
                     throw new Exception("Could not compute AccAddress: missing rawAddress");
                 }
-                return new AccountAddress(Bech32.Encode("terra",(byte[])this.RawAddress));
+                return new AccountAddress(Bech32.Encode("terra", (byte[])this.RawAddress));
             }
         }
 
@@ -123,7 +129,7 @@ namespace Terra.Net.Objects
         //        return ValPubKey.New(Bech32.Encode("terravaloperpub", (byte[])this.RawPubKey));
         //    }
         //}
-        
+
         //    /**
         //     * Called to derive the relevant account and validator addresses and public keys from
         //     * the raw compressed public key in bytes.
@@ -147,43 +153,38 @@ namespace Terra.Net.Objects
         {
         }
 
-        ///**
-        // * Signs a [[StdSignMsg]] with the method supplied by the child class.
-        // *
-        // * @param tx sign-message of the transaction to sign
-        // */
-        public StdSignature CreateSignature(StdSignMsg tx)
+        /* export function fromProto(pubkeyAny: PublicKey.Proto): PublicKey {
+    const typeUrl = pubkeyAny.typeUrl;
+    if (typeUrl === '/cosmos.crypto.secp256k1.PubKey') {
+      return SimplePublicKey.unpackAny(pubkeyAny);
+    } else if (typeUrl === '/cosmos.crypto.multisig.LegacyAminoPubKey') {
+      return LegacyAminoMultisigPublicKey.unpackAny(pubkeyAny);
+    } else if (typeUrl === '/cosmos.crypto.ed25519.PubKey') {
+      return ValConsPublicKey.unpackAny(pubkeyAny);
+    }
+
+    throw new Error(`Pubkey type ${typeUrl} not recognized`);
+  }*/
+
+        private byte[] CreateSignature(SignDoc sign)
         {
-            var json = tx.ToJson();
-            var jsonBytes = json.ToByteArrayFromString();
-            var sigBuffer = Sign(jsonBytes);
-
-            if (PublicKey == null )
-            {
-                throw new Exception("Signature could not be created: Key instance missing publicKey");
-            }
-
-            var signature=  new StdSignature(Convert.ToBase64String(sigBuffer), new PublicKey("tendermint/PubKeySecp256k1", Convert.ToBase64String(PublicKey)));
-            signature.Sequence = tx.Sequence;
-            signature.AccountNumber= tx.AccountNumber;
+            var docSerialized = sign.ToByteArray();
+            var signature = Sign(docSerialized);
             return signature;
         }
-
-        ///**
-        // * Signs a [[StdSignMsg]] and adds the signature to a generated StdTx that is ready to be broadcasted.
-        // * @param tx
-        // */
-        public StdTx2 SignTx2(StdSignMsg tx)
+        public TxRaw ToRawSignedTx(SignDoc doc)
         {
-            var sig = CreateSignature(tx);
-            return new StdTx2(tx.Msgs, tx.Fee, new  [] {sig}, tx.Memo, tx.TimeoutHeight);
+            var signature = CreateSignature(doc);
+            var tx = new TxRaw()
+            {
+                AuthInfoBytes = doc.AuthInfoBytes,
+                BodyBytes = doc.BodyBytes,
+            };
+            tx.Signatures.Add(ByteString.CopyFrom(signature));
+            return tx;
         }
 
-        public StdTx SignTx(StdSignMsg tx)
-        {
-            var sig = CreateSignature(tx);
-            return new StdTx(tx.Msgs, tx.Fee, new[] { sig }, tx.Memo, tx.TimeoutHeight);
-        }
+     
 
     }
 }
