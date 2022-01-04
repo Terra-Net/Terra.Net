@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Terra.Net.Crypto.Bip39;
 
 namespace Terra.Net.Crypto.Implemetations
 {
@@ -15,6 +16,7 @@ namespace Terra.Net.Crypto.Implemetations
 
         private static uint Polymod(byte[] values)
         {
+            
             uint chk = 1;
             foreach (var value in values)
             {

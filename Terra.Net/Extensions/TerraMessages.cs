@@ -63,6 +63,12 @@ namespace Terra.Net.Extensions
 
             return authInfo;
         }
+        public static AuthInfo GenerateAuthInfo(Fee fee, SignerInfo signerInfo)
+        {
+            var authInfo = new AuthInfo() { Fee = fee };
+            authInfo.SignerInfos.Add(signerInfo);
+            return authInfo;
+        }
         public static TxRaw CreateRawTx(ByteString body, ByteString auth, params ByteString[] signatures)
         {
             var tx = new TxRaw() { AuthInfoBytes = auth, BodyBytes = body };

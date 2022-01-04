@@ -1,4 +1,4 @@
-﻿namespace Terra.Net.Objects
+﻿namespace Terra.Net.Crypto
 {
     public class MnemonicKeyOptions
     {

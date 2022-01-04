@@ -2,7 +2,7 @@
 using NBitcoin.Secp256k1;
 using Terra.Net.Crypto.Ecdsa;
 
-namespace Terra.Net.Objects
+namespace Terra.Net.Crypto
 {
     public class RawKey : Key
     {

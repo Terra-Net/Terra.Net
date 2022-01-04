@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Terra.Net.Objects.Addresses;
+using Terra.Net.Common;
 
 namespace Terra.Net.Objects.Dto
 {

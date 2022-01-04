@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Terra.Net.Crypto;
 using Terra.Net.Crypto.Implemetations;
 
-namespace Terra.Net.Objects.Addresses
+namespace Terra.Net.Common
 {
-  
-    /**
-    * `terravaloper-` prefixed validator operator address
-    */
 
-  
+    /// <summary>
+    /// `terravaloper-` prefixed validator operator address
+    /// </summary>
     public class ValidatorAddress
     {
         private ValidatorAddress(string value)
@@ -27,13 +26,10 @@ namespace Terra.Net.Objects.Addresses
         {
             return new ValidatorAddress(value);
         }
-
-
-        /**
-         * Checks if a string is a Terra validator address.
-         *
-         * @param data string to check
-         */
+        /// <summary>
+        /// Checks if a string is a Terra validator address.
+        /// </summary>
+        /// <returns></returns>
         public bool Validate()
         {
             return Validate(Value);
@@ -44,11 +40,11 @@ namespace Terra.Net.Objects.Addresses
             return Bech32Helper.CheckPrefixAndLength("terravaloper", value, 51);
         }
 
-
-        /**
-        * Converts a Terra account address to a validator address.
-        * @param address account address to convert
-        */
+        /// <summary>
+        /// Converts a Terra account address to a validator address.
+        /// </summary>
+        /// <param name="address"></param>
+        /// <returns></returns>
         public static ValidatorAddress FromAccAddress(AccountAddress address)
         {
             var vals = Bech32.Decode(address.Value);

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Terra.Net.Crypto.Bip39 {
+namespace Terra.Net.Crypto.Implemetations.Bip39 {
     using System;
     
     
@@ -19,10 +19,10 @@ namespace Terra.Net.Crypto.Bip39 {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class WordResources {
+    public class WordResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,10 +36,10 @@ namespace Terra.Net.Crypto.Bip39 {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Terra.Net.Crypto.Bip39.WordResources", typeof(WordResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Terra.Net.Crypto.Implemetations.Bip39.WordResources", typeof(WordResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace Terra.Net.Crypto.Bip39 {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -231,95 +231,9 @@ namespace Terra.Net.Crypto.Bip39 {
         ///建
         ///月
         ///公
-        ///无
-        ///系
-        ///军
-        ///很
-        ///情
-        ///者
-        ///最
-        ///立
-        ///代
-        ///想
-        ///已
-        ///通
-        ///并
-        ///提
-        ///直
-        ///题
-        ///党
-        ///程
-        ///展
-        ///五
-        ///果
-        ///料
-        ///象
-        ///员
-        ///革
-        ///位
-        ///入
-        ///常
-        ///文
-        ///总
-        ///次
-        ///品
-        ///式
-        ///活
-        ///设
-        ///及
-        ///管
-        ///特
-        ///件
-        ///长
-        ///求
-        ///老
-        ///头
-        ///基
-        ///资
-        ///边
-        ///流
-        ///路
-        ///级
-        ///少
-        ///图
-        ///山
-        ///统
-        ///接
-        ///知
-        ///较
-        ///将
-        ///组
-        ///见
-        ///计
-        ///别
-        ///她
-        ///手
-        ///角
-        ///期
-        ///根
-        ///论
-        ///运
-        ///农
-        ///指
-        ///几
-        ///九
-        ///区
-        ///强
-        ///放
-        ///决
-        ///西
-        ///被
-        ///干
-        ///做
-        ///必
-        ///战
-        ///先
-        ///回
-        ///则
-        ///任
-        /// [rest of string was truncated]&quot;;.
+        ///无        /// [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string chinese_simplified {
+        public static string chinese_simplified {
             get {
                 return ResourceManager.GetString("chinese_simplified", resourceCulture);
             }
@@ -496,95 +410,9 @@ namespace Terra.Net.Crypto.Bip39 {
         ///建
         ///月
         ///公
-        ///無
-        ///系
-        ///軍
-        ///很
-        ///情
-        ///者
-        ///最
-        ///立
-        ///代
-        ///想
-        ///已
-        ///通
-        ///並
-        ///提
-        ///直
-        ///題
-        ///黨
-        ///程
-        ///展
-        ///五
-        ///果
-        ///料
-        ///象
-        ///員
-        ///革
-        ///位
-        ///入
-        ///常
-        ///文
-        ///總
-        ///次
-        ///品
-        ///式
-        ///活
-        ///設
-        ///及
-        ///管
-        ///特
-        ///件
-        ///長
-        ///求
-        ///老
-        ///頭
-        ///基
-        ///資
-        ///邊
-        ///流
-        ///路
-        ///級
-        ///少
-        ///圖
-        ///山
-        ///統
-        ///接
-        ///知
-        ///較
-        ///將
-        ///組
-        ///見
-        ///計
-        ///別
-        ///她
-        ///手
-        ///角
-        ///期
-        ///根
-        ///論
-        ///運
-        ///農
-        ///指
-        ///幾
-        ///九
-        ///區
-        ///強
-        ///放
-        ///決
-        ///西
-        ///被
-        ///幹
-        ///做
-        ///必
-        ///戰
-        ///先
-        ///回
-        ///則
-        ///任
-        /// [rest of string was truncated]&quot;;.
+        ///無        /// [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string chinese_traditional {
+        public static string chinese_traditional {
             get {
                 return ResourceManager.GetString("chinese_traditional", resourceCulture);
             }
@@ -658,18 +486,9 @@ namespace Terra.Net.Crypto.Bip39 {
         ///amount
         ///amused
         ///analyst
-        ///anchor
-        ///ancient
-        ///anger
-        ///angle
-        ///angry
-        ///animal
-        ///ankle
-        ///announce
-        ///annual
-        ///anothe [rest of string was truncated]&quot;;.
+        ///a [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string english {
+        public static string english {
             get {
                 return ResourceManager.GetString("english", resourceCulture);
             }
@@ -732,17 +551,9 @@ namespace Terra.Net.Crypto.Bip39 {
         ///aéronef
         ///affaire
         ///affecter
-        ///affiche
-        ///affreux
-        ///affubler
-        ///agacer
-        ///agencer
-        ///agile
-        ///agiter
-        ///agrafer
-        ///agr [rest of string was truncated]&quot;;.
+        ///affiche        /// [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string french {
+        public static string french {
             get {
                 return ResourceManager.GetString("french", resourceCulture);
             }
@@ -807,16 +618,9 @@ namespace Terra.Net.Crypto.Bip39 {
         ///aliante
         ///alibi
         ///alimento
-        ///allagato
-        ///allegro
-        ///allievo
-        ///allodola
-        ///allusivo
-        ///almeno
-        ///alogeno
-        ///alpaca [rest of string was truncated]&quot;;.
+        ///allaga [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string italian {
+        public static string italian {
             get {
                 return ResourceManager.GetString("italian", resourceCulture);
             }
@@ -907,25 +711,9 @@ namespace Terra.Net.Crypto.Bip39 {
         ///いせき
         ///いぜん
         ///いそうろう
-        ///いそがしい
-        ///いだい
-        ///いだく
-        ///いたずら
-        ///いたみ
-        ///いたりあ
-        ///いちおう
-        ///いちじ
-        ///いちど
-        ///いちば
-        ///いちぶ
-        ///いちりゅう
-        ///いつか
-        ///いっしゅん
-        ///いっせい
-        ///いっそう
-        ///いっ [rest of string was truncated]&quot;;.
+        ///い [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string japanese {
+        public static string japanese {
             get {
                 return ResourceManager.GetString("japanese", resourceCulture);
             }
@@ -998,20 +786,9 @@ namespace Terra.Net.Crypto.Bip39 {
         ///거품
         ///걱정
         ///건강
-        ///건물
-        ///건설
-        ///건조
-        ///건축
-        ///걸음
-        ///검사
-        ///검토
-        ///게시판
-        ///게임
-        ///겨울
-        ///견해
-        ///ᄀ [rest of string was truncated]&quot;;.
+        ///건물        /// [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string korean {
+        public static string korean {
             get {
                 return ResourceManager.GetString("korean", resourceCulture);
             }
@@ -1081,19 +858,9 @@ namespace Terra.Net.Crypto.Bip39 {
         ///alacrán
         ///alambre
         ///alarma
-        ///alba
-        ///álbum
-        ///alcalde
-        ///aldea
-        ///alegre
-        ///alejar
-        ///alerta
-        ///aleta
-        ///alfiler
-        ///alga
-        ///a [rest of string was truncated]&quot;;.
+        ///alba [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string spanish {
+        public static string spanish {
             get {
                 return ResourceManager.GetString("spanish", resourceCulture);
             }

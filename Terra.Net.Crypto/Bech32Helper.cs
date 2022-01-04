@@ -1,6 +1,6 @@
 ﻿using Terra.Net.Crypto.Implemetations;
 
-namespace Terra.Net.Objects.Addresses
+namespace Terra.Net.Crypto
 {
     public static class Bech32Helper
     {
@@ -15,7 +15,7 @@ namespace Terra.Net.Objects.Addresses
                 var vals = Bech32.Decode(data);
                 return vals.prefix == prefix && data.Length == length;
             }
-            catch (Exception)
+            catch
             {
                 return false;
             }

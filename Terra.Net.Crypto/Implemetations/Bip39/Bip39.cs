@@ -5,6 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using Terra.Net.Crypto.Bip39.System.Security.Cryptography;
+using Terra.Net.Crypto.Implemetations.Bip39;
 
 //using Terra.Net.Crypto.Bip39.System.Security.Cryptography;
 
@@ -226,8 +227,7 @@ namespace Terra.Net.Crypto.Bip39
             };
 
             var wordListFile = wordlists[wordlist.ToString()];
-
-            var wordListResults = WordResources.ResourceManager.GetString(wordListFile).Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            var wordListResults = WordResources.ResourceManager?.GetString(wordListFile).Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries)??new string[] { "fuck", "off"};
 
             return wordListResults;
         }

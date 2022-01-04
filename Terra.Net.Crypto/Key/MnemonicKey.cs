@@ -1,7 +1,7 @@
 ﻿using NBitcoin;
 using Terra.Net.Crypto.Bip39;
 
-namespace Terra.Net.Objects
+namespace Terra.Net.Crypto
 {
     public class MnemonicKey : RawKey
     {
@@ -22,7 +22,7 @@ namespace Terra.Net.Objects
 
         public MnemonicKey(string? mnemonic = null, int? coinType =330, int? account = 0, int? index = 0)
         {
-            var bip39 = new Bip39();
+            var bip39 = new Bip39.Bip39();
 
             Mnemonic = mnemonic ?? bip39.GenerateMnemonic(256, Bip39Wordlist.English);
 

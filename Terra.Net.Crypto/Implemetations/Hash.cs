@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Security.Cryptography;
 using System.Text;
+using Terra.Net.Crypto.Bip39;
 using Terra.Net.Crypto.Chaos.Nacl;
+using Terra.Net.Crypto.Implemetations.Bip39;
 
 namespace Terra.Net.Crypto
 {
@@ -16,7 +18,7 @@ namespace Terra.Net.Crypto
         public const int SignatureLength = 64;
 
         //public static SignatureAlgorithm Algorithm { get; } = SignatureAlgorithm.Ed25519;
-
+  
         public static byte[] EncryptSymmetric(byte[] message, byte[] nonce, byte[] sharedKey)
         {
             return XSalsa20Poly1305.Encrypt(message, sharedKey, nonce);

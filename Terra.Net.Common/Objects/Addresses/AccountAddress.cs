@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Terra.Net.Crypto;
 using Terra.Net.Crypto.Implemetations;
 
-namespace Terra.Net.Objects.Addresses
+namespace Terra.Net.Common
 {  
     public class AccountAddress
     {
