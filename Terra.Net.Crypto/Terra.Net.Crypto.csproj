@@ -29,6 +29,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="english.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Implemetations\Bip39\wordlists\english.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

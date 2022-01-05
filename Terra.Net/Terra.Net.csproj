@@ -17,7 +17,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Terra.Net.Common\Terra.Net.Common.csproj" />
-    <ProjectReference Include="..\Terra.Net.Crypto\Terra.Net.Crypto.csproj" />
   </ItemGroup>
 
   <ItemGroup>
