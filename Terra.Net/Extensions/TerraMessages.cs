@@ -28,7 +28,7 @@ namespace Terra.Net.Extensions
             return c;
         }
 
-        public static MsgExecuteContract CreateExecuteContractMessage<TExecuteMessage>(TExecuteMessage executeMessage, IEnumerable<Coin> coins, string sender, string contract, JsonConverter? converter = null)
+        public static MsgExecuteContract CreateExecuteContractMessage<TExecuteMessage>(TExecuteMessage executeMessage, string sender, string contract, IEnumerable<Coin>? coins = default, JsonConverter? converter = null)
         {
             var msg = new MsgExecuteContract()
             {
@@ -36,7 +36,8 @@ namespace Terra.Net.Extensions
                 Contract = contract,
                 Sender = sender,
             };
-            msg.Coins.AddRange(coins);
+            if (coins != default && coins.Any())
+                msg.Coins.AddRange(coins);
             return msg;
         }
         public static SignerInfo GenerateSignerInfo(ulong sequence, byte[] publicKey)
@@ -97,7 +98,6 @@ Build a TxRaw and serialize it for broadcasting.*/
                 ChainId = chainId,
             };
         }
-
         public static TxBody ToTxBody(this Dictionary<string, IMessage> messages, string? memo = null, ulong? timeoutHeight = null)
         {
             TxBody body = new TxBody();

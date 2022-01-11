@@ -1,26 +1,42 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <PackageId>Terra.Net</PackageId>
-    <Version>0.0.2</Version>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<PackageId>Terra.Net</PackageId>
+		<PackageProjectUrl>https://nuget.org/Terra.Net</PackageProjectUrl>
+		<PackageIcon>terra-logo.png</PackageIcon>
+		<RepositoryUrl>https://github.com/Terra-Net/Terra.Net</RepositoryUrl>
+		<Version>0.0.3-pre</Version>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="NBitcoin" Version="6.0.18" />
-    <PackageReference Include="protobuf-net" Version="3.0.101" />
-    <PackageReference Include="Terra.Net.Grpc" Version="0.0.2-pre" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Remove="icon\terra-logo.png" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Terra.Net.Common\Terra.Net.Common.csproj" />
-  </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Objects\Signin\" />
-  </ItemGroup>
+	<ItemGroup>
+		<Content Include="icon\terra-logo.png">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="NBitcoin" Version="6.0.19" />
+		<PackageReference Include="protobuf-net" Version="3.0.101" />
+		<PackageReference Include="Terra.Net.Grpc" Version="0.0.4-pre" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Terra.Net.Common\Terra.Net.Common.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Folder Include="Objects\Signin\" />
+	</ItemGroup>
 
 </Project>

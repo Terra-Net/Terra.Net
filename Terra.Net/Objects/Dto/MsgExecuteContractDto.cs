@@ -9,8 +9,8 @@ namespace Terra.Net.Objects.Dto
 {
     public class MsgExecuteContractDto<TExecuteMessage>
     {
-        public AccountAddress Sender { get; set; }
-        public AccountAddress Contract { get;set; }
+        public string Sender { get; set; }
+        public string Contract { get;set; }
         public TExecuteMessage ExecuteMessage { get; set; }
 
     }
