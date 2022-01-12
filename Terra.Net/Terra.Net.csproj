@@ -9,7 +9,7 @@
 		<PackageProjectUrl>https://nuget.org/Terra.Net</PackageProjectUrl>
 		<PackageIcon>terra-logo.png</PackageIcon>
 		<RepositoryUrl>https://github.com/Terra-Net/Terra.Net</RepositoryUrl>
-		<Version>0.0.3-pre</Version>
+		<Version>0.0.4-pre</Version>
 	</PropertyGroup>
 
 	<ItemGroup>

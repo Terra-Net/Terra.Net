@@ -90,10 +90,10 @@ namespace Terra.Net.Objects.Dto
     {
         public TerraSellSwapMessage(string contract, ulong amount, decimal beliefPrice, decimal maxSpread = 0.01m)
         {
-            Send = new SendToSwap<Swap>(TerraSwapMessage.FromTokenToSell(beliefPrice, maxSpread).Swap, amount, contract);
+            Send = new SendToSwap<TerraSwapMessage>(TerraSwapMessage.FromTokenToSell(beliefPrice, maxSpread), amount, contract);
         }
         [JsonProperty("send")]
-        public SendToSwap<Swap> Send { get; set; }
+        public SendToSwap<TerraSwapMessage> Send { get; set; }
     }
 
     public class SendToSwap<T>
