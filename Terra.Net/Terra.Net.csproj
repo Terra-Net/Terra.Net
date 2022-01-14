@@ -9,7 +9,7 @@
 		<PackageProjectUrl>https://nuget.org/Terra.Net</PackageProjectUrl>
 		<PackageIcon>terra-logo.png</PackageIcon>
 		<RepositoryUrl>https://github.com/Terra-Net/Terra.Net</RepositoryUrl>
-		<Version>0.0.4-pre</Version>
+		<Version>0.0.5-pre</Version>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -28,7 +28,7 @@
 	<ItemGroup>
 		<PackageReference Include="NBitcoin" Version="6.0.19" />
 		<PackageReference Include="protobuf-net" Version="3.0.101" />
-		<PackageReference Include="Terra.Net.Grpc" Version="0.0.4-pre" />
+		<PackageReference Include="Terra.Net.Grpc" Version="0.0.5-pre" />
 	</ItemGroup>
 
 	<ItemGroup>
